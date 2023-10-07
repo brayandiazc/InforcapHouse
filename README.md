@@ -24,7 +24,7 @@ Este proyecto estaría dirigido a personas que quieran aprender a crear aplicaci
 El principal problema que enfrentan es la necesidad de una plataforma confiable y estable que cumpla con todos sus requerimientos:
 
 - Paginas estaticas, Inicio, terminos legales.
-- Pagina de contacto.
+- Formulario de contacto.
 - Autenticación de usuarios, 2 roles de usuario (Admin, User)
 - Inmueble con la siguiente información; Tipo de inmueble, tipo de oferta, descripción del inmueble, area, precio, caracteristicas (Estas deben poder seleccionar una o multiples), Foto e información de contacto.
 
