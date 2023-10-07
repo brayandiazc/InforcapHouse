@@ -1,4 +1,5 @@
 <p style="color: green"><%= notice %></p>
+<%= link_to "New property", new_property_path %>
 
 <h1>Properties</h1>
 
@@ -11,4 +12,4 @@
   <% end %>
 </div>
 
-<%= link_to "New property", new_property_path %>
+<%== pagy_bootstrap_nav(@pagy) %>

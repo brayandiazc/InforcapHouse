@@ -1,0 +1,40 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <div class="container">
+    <%= link_to "InforcapHouse", root_path, class: "navbar-brand" %>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <%= link_to "Inmuebles", properties_path, class: "nav-link" %>
+        </li>
+
+        <% if user_signed_in? %>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.name %>
+            <strong>
+              <%= current_user.role %>
+            </strong>
+          </a>
+          <ul class="dropdown-menu">
+            <li> <%= link_to "Editar perfil", edit_user_registration_path, class: "dropdown-item" %></li>
+            <li><hr class="dropdown-divider"></li>
+            <li>
+              <%= button_to "Cerrar sesión", destroy_user_session_path, method: :delete, class: "dropdown-item" %>
+            </li>
+          </ul>
+        </li>
+        <% else %>
+          <li>
+            <%= link_to "Iniciar sesión", new_user_session_path, class: "btn btn-primary" %>
+          </li>
+          <li>
+            <%= link_to "Registrarse", new_user_registration_path, class: "btn btn-secondary" %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</nav>
