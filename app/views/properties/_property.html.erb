@@ -1,49 +1,36 @@
 <div id="<%= dom_id property %>">
-  <p>
-    <strong>User:</strong>
-    <%= property.user.name %>
-  </p>
+<div class="card">
+  <%# <img src="..." class="card-img-top" alt="..."> %>
+  <div class="card-body">
+    <h5 class="card-title">
+      <%= property.type_property.name %> en <%= property.type_offer.name %>
+    </h5>
+    <p class="card-text"><%= property.description %></p>
+    <p>
+      <strong>Contacto:</strong>
+      <%= property.user.name %><br>
+      <a href="mailto:<%= property.user.email %>"><%= property.user.email %></a><br>
+      <a href="tel:+<%= property.user.phone %>"><%= property.user.phone %></a>
+    </p>
+    <p>
+      <strong>Features:</strong>
+      <% property.features.each do |item| %>
+        <%= content_tag :span, item.name, class: "tag"  %>
+      <% end %>
+    </p>
 
-  <p>
-    <strong>Email:</strong>
-    <%= property.user.email %>
-  </p>
+    <p>
+      <strong>Area:</strong>
+      <%= property.area %>
+    </p>
 
-  <p>
-    <strong>Phone:</strong>
-    <%= property.user.phone %>
-  </p>
+    <p>
+      <strong>Price:</strong>
+      <%= property.price %>
+    </p>
+  </div>
+</div>
 
-  <p>
-    <strong>Type offer:</strong>
-    <%= property.type_offer.name %>
-  </p>
 
-  <p>
-    <strong>Features:</strong>
-    <% property.features.each do |item| %>
-      <%= content_tag :span, item.name, class: "tag"  %>
-    <% end %>
-  </p>
-
-  <p>
-    <strong>Type property:</strong>
-    <%= property.type_property.name %>
-  </p>
-
-  <p>
-    <strong>Description:</strong>
-    <%= property.description %>
-  </p>
-
-  <p>
-    <strong>Area:</strong>
-    <%= property.area %>
-  </p>
-
-  <p>
-    <strong>Price:</strong>
-    <%= property.price %>
-  </p>
 
 </div>
