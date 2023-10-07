@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2023_10_07_141821) do
+ActiveRecord::Schema[7.1].define(version: 2023_10_07_142957) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -26,6 +26,20 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_07_141821) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "properties", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "type_offer_id", null: false
+    t.bigint "type_property_id", null: false
+    t.text "description"
+    t.integer "area"
+    t.decimal "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["type_offer_id"], name: "index_properties_on_type_offer_id"
+    t.index ["type_property_id"], name: "index_properties_on_type_property_id"
+    t.index ["user_id"], name: "index_properties_on_user_id"
   end
 
   create_table "type_offers", force: :cascade do |t|
@@ -55,4 +69,7 @@ ActiveRecord::Schema[7.1].define(version: 2023_10_07_141821) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "properties", "type_offers"
+  add_foreign_key "properties", "type_properties"
+  add_foreign_key "properties", "users"
 end
