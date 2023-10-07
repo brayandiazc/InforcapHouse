@@ -66,3 +66,7 @@ group :test do
   gem "capybara"
   gem "selenium-webdriver"
 end
+
+gem "annotate", "~> 3.2"
+
+gem "faker", "~> 3.2"

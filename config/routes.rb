@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  # Contacts
+  resources :contacts, only: %i[new create]
 
   # Paginas estaticas
   get '/home', to: 'pages#home'
