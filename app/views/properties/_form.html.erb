@@ -27,6 +27,11 @@
   </div>
 
   <div>
+    <%= form.label :features, style: "display: block" %>
+    <%= form.collection_check_boxes :feature_ids, Feature.all, :id, :name %>
+  </div>
+
+  <div>
     <%= form.label :description, style: "display: block" %>
     <%= form.text_area :description, required: true %>
   </div>

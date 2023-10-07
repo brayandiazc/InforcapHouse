@@ -20,6 +20,13 @@
   </p>
 
   <p>
+    <strong>Features:</strong>
+    <% property.features.each do |item| %>
+      <%= content_tag :span, item.name, class: "tag"  %>
+    <% end %>
+  </p>
+
+  <p>
     <strong>Type property:</strong>
     <%= property.type_property.name %>
   </p>
