@@ -13,32 +13,32 @@
 
   <div>
     <%= form.label :user_id, style: "display: block" %>
-    <%= form.text_field :user_id %>
+    <%= form.collection_select :user_id, User.all, :id, :name %>
   </div>
 
   <div>
     <%= form.label :type_offer_id, style: "display: block" %>
-    <%= form.text_field :type_offer_id %>
+    <%= form.collection_select :type_offer_id, TypeOffer.all, :id, :name %>
   </div>
 
   <div>
     <%= form.label :type_property_id, style: "display: block" %>
-    <%= form.text_field :type_property_id %>
+    <%= form.collection_select :type_property_id, TypeProperty.all, :id, :name %>
   </div>
 
   <div>
     <%= form.label :description, style: "display: block" %>
-    <%= form.text_area :description %>
+    <%= form.text_area :description, required: true %>
   </div>
 
   <div>
     <%= form.label :area, style: "display: block" %>
-    <%= form.number_field :area %>
+    <%= form.number_field :area, required: true %>
   </div>
 
   <div>
     <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
+    <%= form.text_field :price, required: true %>
   </div>
 
   <div>
