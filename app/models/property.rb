@@ -17,6 +17,9 @@ class Property < ApplicationRecord
   belongs_to :user
   belongs_to :type_offer
   belongs_to :type_property
+  # Relaciones
+  has_many :property_features, dependent: :destroy
+  has_many :features, through: :property_features
 
   # Validaciones
   validates :description, presence: true

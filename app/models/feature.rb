@@ -10,4 +10,8 @@
 class Feature < ApplicationRecord
   # Validaciones
   validates :name, presence: true, uniqueness: true
+
+  # Relaciones
+  has_many :property_features, dependent: :destroy
+  has_many :properties, through: :property_features
 end
