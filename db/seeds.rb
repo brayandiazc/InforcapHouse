@@ -7,3 +7,11 @@ CSV.foreach(Rails.root.join('db/seeds/csv/typeProperties.csv'), headers: true) d
     type_property.name = row[1]
   end
 end
+
+puts 'Importing typeOffers...'
+CSV.foreach(Rails.root.join('db/seeds/csv/typeOffers.csv'), headers: true) do |row|
+  TypeOffer.create! do |type_offer|
+    type_offer.id = row[0]
+    type_offer.name = row[1]
+  end
+end
